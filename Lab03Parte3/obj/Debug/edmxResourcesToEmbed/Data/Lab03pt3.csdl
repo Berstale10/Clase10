@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Lab03Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Lab03Entities1" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_ConsultaProvincia" ReturnType="Collection(Lab03Model.sp_ConsultaProvincia_Result)" />
+    <FunctionImport Name="sp_ConsultaUsuario" ReturnType="Collection(Lab03Model.sp_ConsultaUsuario_Result)" />
+    <FunctionImport Name="sp_CrearProvincia">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CrearUsuario">
+      <Parameter Name="NombreU" Mode="In" Type="String" />
+      <Parameter Name="Nickname" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Fecha_creacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Ultima_actualizacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_EliminaProvincia">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_EliminaUsuario">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UpdateProvincia">
+      <Parameter Name="codigo" Mode="In" Type="String" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UpdateUsuario">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="NombreU" Mode="In" Type="String" />
+      <Parameter Name="Nickname" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Ultima_actualizacion" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="spConsultarProvinciaPorId" ReturnType="Collection(Lab03Model.spConsultarProvinciaPorId_Result)">
+      <Parameter Name="idProvincia" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spEditarProvincia">
+      <Parameter Name="idProvincia" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="estado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spEliminarProvinciapt3">
+      <Parameter Name="idProvincia" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_ConsultaProvincia_Result">
+    <Property Type="Int32" Name="id_Provincia" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fechaCreacion" Nullable="false" Precision="23" />
+    <Property Type="String" Name="estado" Nullable="false" MaxLength="3" />
+  </ComplexType>
+  <ComplexType Name="sp_ConsultaUsuario_Result">
+    <Property Type="Int32" Name="id_Usuario" Nullable="false" />
+    <Property Type="String" Name="Nombre_Usuario" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nickname" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Contraseña" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="Fecha_creacion" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Ultima_actualizacion" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="spConsultarProvinciaPorId_Result">
+    <Property Type="Int32" Name="id_Provincia" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fechaCreacion" Nullable="false" Precision="23" />
+    <Property Type="String" Name="estado" Nullable="false" MaxLength="3" />
+  </ComplexType>
+</Schema>

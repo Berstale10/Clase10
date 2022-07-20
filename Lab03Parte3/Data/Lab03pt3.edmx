@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Lab03Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_ConsultaProvincia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_ConsultaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_CrearProvincia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_CrearUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreU" Type="varchar" Mode="In" />
+          <Parameter Name="Nickname" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Fecha_creacion" Type="datetime" Mode="In" />
+          <Parameter Name="Ultima_actualizacion" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_EliminaProvincia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_EliminaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateProvincia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="nvarchar" Mode="In" />
+          <Parameter Name="nombre" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="NombreU" Type="varchar" Mode="In" />
+          <Parameter Name="Nickname" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Ultima_actualizacion" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="spConsultarProvinciaPorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProvincia" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spEditarProvincia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProvincia" Type="int" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="estado" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spEliminarProvinciapt3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProvincia" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Lab03ModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Lab03Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Lab03Entities1" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_ConsultaProvincia" ReturnType="Collection(Lab03Model.sp_ConsultaProvincia_Result)" />
+          <FunctionImport Name="sp_ConsultaUsuario" ReturnType="Collection(Lab03Model.sp_ConsultaUsuario_Result)" />
+          <FunctionImport Name="sp_CrearProvincia">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CrearUsuario">
+            <Parameter Name="NombreU" Mode="In" Type="String" />
+            <Parameter Name="Nickname" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Fecha_creacion" Mode="In" Type="DateTime" />
+            <Parameter Name="Ultima_actualizacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_EliminaProvincia">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_EliminaUsuario">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UpdateProvincia">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UpdateUsuario">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="NombreU" Mode="In" Type="String" />
+            <Parameter Name="Nickname" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Ultima_actualizacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarProvinciaPorId" ReturnType="Collection(Lab03Model.spConsultarProvinciaPorId_Result)">
+          <Parameter Name="idProvincia" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spEditarProvincia">
+            <Parameter Name="idProvincia" Mode="In" Type="Int32" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="estado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spEliminarProvinciapt3">
+            <Parameter Name="idProvincia" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_ConsultaProvincia_Result">
+          <Property Type="Int32" Name="id_Provincia" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fechaCreacion" Nullable="false" Precision="23" />
+          <Property Type="String" Name="estado" Nullable="false" MaxLength="3" />
+        </ComplexType>
+        <ComplexType Name="sp_ConsultaUsuario_Result">
+          <Property Type="Int32" Name="id_Usuario" Nullable="false" />
+          <Property Type="String" Name="Nombre_Usuario" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Nickname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Contraseña" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="Fecha_creacion" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Ultima_actualizacion" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="spConsultarProvinciaPorId_Result">
+          <Property Type="Int32" Name="id_Provincia" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="fechaCreacion" Nullable="false" Precision="23" />
+          <Property Type="String" Name="estado" Nullable="false" MaxLength="3" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Lab03ModelStoreContainer" CdmEntityContainer="Lab03Entities1" >
+          <FunctionImportMapping FunctionImportName="sp_ConsultaProvincia" FunctionName="Lab03Model.Store.sp_ConsultaProvincia">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Lab03Model.sp_ConsultaProvincia_Result">
+                <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_ConsultaUsuario" FunctionName="Lab03Model.Store.sp_ConsultaUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Lab03Model.sp_ConsultaUsuario_Result">
+                <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+                <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+                <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Fecha_creacion" ColumnName="Fecha_creacion" />
+                <ScalarProperty Name="Ultima_actualizacion" ColumnName="Ultima_actualizacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_CrearProvincia" FunctionName="Lab03Model.Store.sp_CrearProvincia" />
+          <FunctionImportMapping FunctionImportName="sp_CrearUsuario" FunctionName="Lab03Model.Store.sp_CrearUsuario" />
+          <FunctionImportMapping FunctionImportName="sp_EliminaProvincia" FunctionName="Lab03Model.Store.sp_EliminaProvincia" />
+          <FunctionImportMapping FunctionImportName="sp_EliminaUsuario" FunctionName="Lab03Model.Store.sp_EliminaUsuario" />
+          <FunctionImportMapping FunctionImportName="sp_UpdateProvincia" FunctionName="Lab03Model.Store.sp_UpdateProvincia" />
+          <FunctionImportMapping FunctionImportName="sp_UpdateUsuario" FunctionName="Lab03Model.Store.sp_UpdateUsuario" />
+          <FunctionImportMapping FunctionImportName="spConsultarProvinciaPorId" FunctionName="Lab03Model.Store.spConsultarProvinciaPorId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Lab03Model.spConsultarProvinciaPorId_Result">
+                <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spEditarProvincia" FunctionName="Lab03Model.Store.spEditarProvincia" />
+          <FunctionImportMapping FunctionImportName="spEliminarProvinciapt3" FunctionName="Lab03Model.Store.spEliminarProvinciapt3" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

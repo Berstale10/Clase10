@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Lab03ModelStoreContainer" CdmEntityContainer="Lab03Entities1">
+    <FunctionImportMapping FunctionImportName="sp_ConsultaProvincia" FunctionName="Lab03Model.Store.sp_ConsultaProvincia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Lab03Model.sp_ConsultaProvincia_Result">
+          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ConsultaUsuario" FunctionName="Lab03Model.Store.sp_ConsultaUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Lab03Model.sp_ConsultaUsuario_Result">
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+          <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+          <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="Fecha_creacion" ColumnName="Fecha_creacion" />
+          <ScalarProperty Name="Ultima_actualizacion" ColumnName="Ultima_actualizacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CrearProvincia" FunctionName="Lab03Model.Store.sp_CrearProvincia" />
+    <FunctionImportMapping FunctionImportName="sp_CrearUsuario" FunctionName="Lab03Model.Store.sp_CrearUsuario" />
+    <FunctionImportMapping FunctionImportName="sp_EliminaProvincia" FunctionName="Lab03Model.Store.sp_EliminaProvincia" />
+    <FunctionImportMapping FunctionImportName="sp_EliminaUsuario" FunctionName="Lab03Model.Store.sp_EliminaUsuario" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateProvincia" FunctionName="Lab03Model.Store.sp_UpdateProvincia" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateUsuario" FunctionName="Lab03Model.Store.sp_UpdateUsuario" />
+    <FunctionImportMapping FunctionImportName="spConsultarProvinciaPorId" FunctionName="Lab03Model.Store.spConsultarProvinciaPorId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Lab03Model.spConsultarProvinciaPorId_Result">
+          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spEditarProvincia" FunctionName="Lab03Model.Store.spEditarProvincia" />
+    <FunctionImportMapping FunctionImportName="spEliminarProvinciapt3" FunctionName="Lab03Model.Store.spEliminarProvinciapt3" />
+  </EntityContainerMapping>
+</Mapping>
